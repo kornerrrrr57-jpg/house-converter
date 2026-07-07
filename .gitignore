@@ -1,0 +1,5 @@
+*.wav
+*.sf2
+__pycache__/
+uploads/
+.DS_Store
