@@ -21,7 +21,7 @@ SYNTH_GAIN = "0.6"
 
 # Guard against FluidSynth hanging on a broken MIDI/soundfont combo --
 # without this, a stuck render call could hang a Flask request forever.
-RENDER_TIMEOUT_SECONDS = 60
+RENDER_TIMEOUT_SECONDS = 300
 
 
 def find_soundfont():
@@ -104,10 +104,10 @@ def _fluidsynth_to_wav(midi_path, wav_path):
     cmd = [
         "fluidsynth", "-ni",
         "-g", SYNTH_GAIN,
-        soundfont,
-        midi_path,
         "-F", wav_path,
         "-r", "44100",
+        soundfont,
+        midi_path,
     ]
 
     try:

@@ -12,8 +12,8 @@ import uuid
 from flask import Flask, request, render_template_string, url_for
 
 from analysis import parse_midi        # Person A
-from transform import to_house         # Person B
-from render_audio import render, render_original  # Person B
+from transformNew import to_house         # Person B
+from render_audioNew import render, render_original  # Person B
 
 app = Flask(__name__)
 UPLOAD_DIR = "uploads"

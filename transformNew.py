@@ -175,10 +175,10 @@ def _balance_velocities(notes):
 
     # Rescale drums around the melody's average, but keep the relative
     # accents (kick louder than hats) by scaling rather than overwriting.
-    drum_target = _clamp(int(avg_melody_vel * 1.05), 70, 115)
+    drum_target = _clamp(int(avg_melody_vel * 1.4), 95, 127)
     for n in notes:
         if n["track"] == 99:
-            n["velocity"] = _clamp(int(n["velocity"] * (drum_target / 110)), 40, 120)
+            n["velocity"] = _clamp(int(n["velocity"] * (drum_target / 110)), 60, 120)
 
     bass_target = _clamp(int(avg_melody_vel * 0.9), 55, 105)
     for n in notes:
